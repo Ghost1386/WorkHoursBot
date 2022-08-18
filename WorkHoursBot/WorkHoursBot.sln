@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkHoursBot", "WorkHoursBot\WorkHoursBot.csproj", "{706CF0D3-5BA1-4697-9BD6-B00E4B2139B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkHoursBot.BusinessLogic", "WorkHoursBot.BusinessLogic\WorkHoursBot.BusinessLogic.csproj", "{39323633-A1FE-4075-8412-2640171003C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkHoursBot.Model", "WorkHoursBot.Model\WorkHoursBot.Model.csproj", "{5A2B4277-7A27-454C-8162-8063C4360792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkHoursBot.Common", "WorkHoursBot.Common\WorkHoursBot.Common.csproj", "{C8C24D14-ADE4-4FDE-A214-B168BFAA664B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{706CF0D3-5BA1-4697-9BD6-B00E4B2139B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{706CF0D3-5BA1-4697-9BD6-B00E4B2139B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{706CF0D3-5BA1-4697-9BD6-B00E4B2139B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{706CF0D3-5BA1-4697-9BD6-B00E4B2139B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39323633-A1FE-4075-8412-2640171003C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39323633-A1FE-4075-8412-2640171003C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39323633-A1FE-4075-8412-2640171003C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39323633-A1FE-4075-8412-2640171003C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2B4277-7A27-454C-8162-8063C4360792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2B4277-7A27-454C-8162-8063C4360792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2B4277-7A27-454C-8162-8063C4360792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2B4277-7A27-454C-8162-8063C4360792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8C24D14-ADE4-4FDE-A214-B168BFAA664B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8C24D14-ADE4-4FDE-A214-B168BFAA664B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8C24D14-ADE4-4FDE-A214-B168BFAA664B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8C24D14-ADE4-4FDE-A214-B168BFAA664B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

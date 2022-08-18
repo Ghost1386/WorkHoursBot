@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0U5eNsHW5DCVHlHzy117Mm8DkOHia1xRqox63oT140wwVYxh7qyMRBlpcLueWPWqtkBfCb+fPyeE19dGP8lZFA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.Common\\WorkHoursBot.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
