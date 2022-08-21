@@ -4,14 +4,19 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.ReplyMarkups;
 using WorkHoursBot.BusinessLogic.Interfaces;
+using WorkHoursBot.Common.ViewModels;
 
 namespace WorkHoursBot;
 
 public class MessageController
 {
-    private readonly IJobsService _jobsService;
-    private readonly IReportService _reportService;
-    private readonly IScheduleService _schedulesService;
+    private static TimeOnly _timeStart;
+    private static TimeOnly _timeStop;
+    
+    private static IJobsService _jobsService;
+    private static IReportService _reportService;
+    private static IScheduleService _schedulesService;
+
     public MessageController(IJobsService jobsService, IReportService reportService, IScheduleService schedulesService)
     {
         _jobsService = jobsService;
@@ -23,11 +28,11 @@ public class MessageController
     {
         if (update.Type == UpdateType.Message && update.Message?.Text != null)
         {
-            await HadleMessage(botClient, update.Message);
+            await HandleMessage(botClient, update.Message);
         }
     }
 
-    private static async Task HadleMessage(ITelegramBotClient botClient, Message message)
+    private static async Task HandleMessage(ITelegramBotClient botClient, Message message)
     {
         string userMessage = message.Text.ToLower();
         
@@ -35,6 +40,51 @@ public class MessageController
         {
             await botClient.SendTextMessageAsync(message.Chat.Id, "Choose command:", replyMarkup: KeyboardMain());
             return;
+        }
+
+        if (userMessage == "start")
+        {
+            _timeStart = TimeOnly.FromDateTime(DateTime.UtcNow);
+            
+            await botClient.SendTextMessageAsync(message.Chat.Id, "Stopwatch started.", replyMarkup: KeyboardStopwatch());
+            return;
+        }
+
+        if (userMessage == "stop")
+        {
+            _timeStop = TimeOnly.FromDateTime(DateTime.UtcNow);
+
+            CreateScheduleViewModel model = new CreateScheduleViewModel();
+            model.ChatId = message.Chat.Id;
+            model.Date = DateOnly.FromDateTime(DateTime.UtcNow);
+            model.From = _timeStart;
+            model.To = _timeStop;
+
+            _schedulesService.Create(model);
+            
+            await botClient.SendTextMessageAsync(message.Chat.Id, "Stopwatch stopped.", replyMarkup: KeyboardMain());
+            return;
+        }
+        
+        if (userMessage == "daily report")
+        {
+            
+        }
+
+        if (userMessage == "monthly report")
+        {
+            await botClient.SendTextMessageAsync(message.Chat.Id, "Choose month", replyMarkup: KeyboardMonth());
+            return;
+        }
+
+        if (userMessage == "current")
+        {
+            
+        }
+        
+        if (userMessage == "previous")
+        {
+            
         }
     }
     
@@ -79,5 +129,18 @@ public class MessageController
         };  
             
         return keyboardMain;
-    } 
+    }
+    
+    private static ReplyKeyboardMarkup KeyboardMonth()
+    {
+        ReplyKeyboardMarkup keyboardMain = new(new[]
+        {
+            new KeyboardButton[] {"Current", "Previous"}
+        })
+        {
+            ResizeKeyboard = true
+        };  
+            
+        return keyboardMain;
+    }
 }
