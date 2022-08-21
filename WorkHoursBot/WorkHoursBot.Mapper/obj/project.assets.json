@@ -1830,6 +1830,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "AutoMapper >= 11.0.1",
       "WorkHoursBot.Common >= 1.0.0",
       "WorkHoursBot.Model >= 1.0.0"
     ]
@@ -1840,11 +1841,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.BusinessLogic\\WorkHoursBot.BusinessLogic.csproj",
-      "projectName": "WorkHoursBot.BusinessLogic",
-      "projectPath": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.BusinessLogic\\WorkHoursBot.BusinessLogic.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.Mapper\\WorkHoursBot.Mapper.csproj",
+      "projectName": "WorkHoursBot.Mapper",
+      "projectPath": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.Mapper\\WorkHoursBot.Mapper.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.BusinessLogic\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.Mapper\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1879,6 +1880,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[11.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

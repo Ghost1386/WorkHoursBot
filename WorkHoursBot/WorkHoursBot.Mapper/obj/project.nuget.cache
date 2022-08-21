@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XLezFL/hCVGqOkUMXRpI5ByxlOruAazmzsnJcRTq7k04vUQOsAbNfJlbp+Lkue0iF29p19xanRe5RJxcBlzpPQ==",
+  "dgSpecHash": "AMSjBScWmSmb7CuKEiQPFcyA7TTW5Un7ulQ+HEv4SZtQKpu1wkovbKi8OlhInBYxAyn6nL3UXjVIEicLJg8AkA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.BusinessLogic\\WorkHoursBot.BusinessLogic.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\WorkHoursBot\\WorkHoursBot\\WorkHoursBot.Mapper\\WorkHoursBot.Mapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

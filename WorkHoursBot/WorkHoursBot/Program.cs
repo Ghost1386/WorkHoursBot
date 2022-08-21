@@ -4,7 +4,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Telegram.Bot;
 using Telegram.Bot.Extensions.Polling;
-using WorkHoursBot.Common;
+using WorkHoursBot.BusinessLogic.Interfaces;
+using WorkHoursBot.BusinessLogic.Services;
+using WorkHoursBot.Mapper;
 using WorkHoursBot.Model;
 
 namespace WorkHoursBot
@@ -25,15 +27,23 @@ namespace WorkHoursBot
             var host = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
                 {
-                    //services.AddTransient<IUserService, UserService>();
+                    services.AddTransient<IJobsService, JobsService>();
+                    services.AddTransient<IReportService, ReportService>();
+                    services.AddTransient<IScheduleService, ScheduleService>();
                     services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
                     services.AddSingleton(mapper);
                 })
                 .Build();
             
-            //ActivatorUtilities.CreateInstance<UserService>(host.Services);
+            ActivatorUtilities.CreateInstance<IJobsService>(host.Services);
+            ActivatorUtilities.CreateInstance<IReportService>(host.Services);
+            ActivatorUtilities.CreateInstance<IScheduleService>(host.Services);
 
-            //_userService = ActivatorUtilities.CreateInstance<UserService>(host.Services);
+            var jobsService = ActivatorUtilities.CreateInstance<IJobsService>(host.Services);
+            var reportService = ActivatorUtilities.CreateInstance<IReportService>(host.Services);
+            var scheduleService = ActivatorUtilities.CreateInstance<IScheduleService>(host.Services);
+            
+            var messageController = new MessageController(jobsService, reportService, scheduleService);
             
             var botClient = new TelegramBotClient("5663935981:AAE0Qm05seCXuvGoZUlF_wi8cPkTb1zgGt4");
 
@@ -44,8 +54,6 @@ namespace WorkHoursBot
                 AllowedUpdates = { }
             };
 
-            var messageController = new MessageController();
-            
             botClient.StartReceiving(
                 messageController.HandleUpdatesAsync,
                 messageController.HandleErrorAsync,
