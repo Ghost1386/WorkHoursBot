@@ -11,7 +11,7 @@ public class MapperProfile : Profile
         CreateMap<CreateTasksViewModel, Job>();
 
         CreateMap<CreateScheduleViewModel, Schedule>();
-        
-        CreateMap<TimingScheduleViewModel, Schedule>();
+
+        CreateMap<TimingScheduleViewModel, Timetable>();
     }
 }

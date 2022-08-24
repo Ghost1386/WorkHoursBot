@@ -6,5 +6,7 @@ public interface IScheduleService
 {
     string Create(CreateScheduleViewModel model);
     
-    string ChangeTiming(TimingScheduleViewModel model);
+    string AddTiming(TimingScheduleViewModel model);
+    
+    string RemoveTiming(TimingScheduleViewModel model);
 }

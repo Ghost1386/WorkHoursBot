@@ -13,37 +13,56 @@ public class ReportService : IReportService
         _context = context;
     }
     
-    public List<Schedule> Daily()
-    {
-        try
-        {
-            IQueryable<Schedule> query = _context.Schedules.AsQueryable();
-        
-            query = query.Where(x => x.Date == DateOnly.FromDateTime(DateTime.Now));
-
-            return query.ToList();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return new List<Schedule>();
-        }
-    }
-
-    public List<string> MonthlyNow()
+    public List<string> Daily()
     {
         try
         {
             IQueryable<Schedule> querySchedule = _context.Schedules.AsQueryable();
+            IQueryable<Timetable> queryTimetables = _context.Timetables.AsQueryable();
+            IQueryable<Job> queryJobs = _context.Jobs.AsQueryable();
+
+            List<string> info = new List<string>
+            {
+                DateTime.UtcNow.ToString(),
+                "---",
+                querySchedule.Where(x => x.Date == Convert.ToString(DateOnly.FromDateTime(DateTime.Now))).ToString(),
+                "---",
+                queryTimetables.Where(x => x.Date == Convert.ToString(DateOnly.FromDateTime(DateTime.Now))).ToString(),
+                "---",
+                queryJobs.Where(x => x.Date == Convert.ToString(DateOnly.FromDateTime(DateTime.Now))).ToString(),
+                "==="
+            };
+
+            return info;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return new List<string>();
+        }
+    }
+
+    public List<string> MonthCurrent()
+    {
+        try
+        {
+            IQueryable<Schedule> querySchedule = _context.Schedules.AsQueryable();
+            IQueryable<Timetable> queryTimetables = _context.Timetables.AsQueryable();
             IQueryable<Job> queryJobs = _context.Jobs.AsQueryable();
 
             List<DateOnly> dates = LimitedDay();
-            List<string> info = new List<string?>();
+            List<string> info = new List<string>();
 
             foreach (var date in dates)
             {
-                info.Add(querySchedule.Where(x => x.Date == date).ToString());
-                info.Add(queryJobs.Where(x =>x.Date == date).ToString());
+                info.Add(date.ToString());
+                info.Add("---");
+                info.Add(querySchedule.Where(x => x.Date == Convert.ToString(date)).ToString());
+                info.Add("---");
+                info.Add(queryTimetables.Where(x => x.Date == Convert.ToString(date)).ToString());
+                info.Add("---");
+                info.Add(queryJobs.Where(x =>x.Date == Convert.ToString(date)).ToString());
+                info.Add("===");
             }
         
             return info;
@@ -60,6 +79,7 @@ public class ReportService : IReportService
         try
         {
             IQueryable<Schedule> querySchedule = _context.Schedules.AsQueryable();
+            IQueryable<Timetable> queryTimetables = _context.Timetables.AsQueryable();
             IQueryable<Job> queryJobs = _context.Jobs.AsQueryable();
 
             List<DateOnly> dates = UnLimitedDay();
@@ -67,8 +87,14 @@ public class ReportService : IReportService
 
             foreach (var date in dates)
             {
-                info.Add(querySchedule.Where(x => x.Date == date).ToString());
-                info.Add(queryJobs.Where(x =>x.Date == date).ToString());
+                info.Add(date.ToString());
+                info.Add("---");
+                info.Add(querySchedule.Where(x => x.Date == Convert.ToString(date)).ToString());
+                info.Add("---");
+                info.Add(queryTimetables.Where(x => x.Date == Convert.ToString(date)).ToString());
+                info.Add("---");
+                info.Add(queryJobs.Where(x => x.Date == Convert.ToString(date)).ToString());
+                info.Add("===");
             }
         
             return info;
@@ -86,8 +112,8 @@ public class ReportService : IReportService
 
         for (int i = 1; i <= DateTime.Now.Day; i++)
         {
-            dates.Add(DateOnly.Parse($"{i}.{DateTime.UtcNow.Month}." +
-                                     $"{DateTime.UtcNow.Year}"));
+            dates.Add(DateOnly.Parse($"{i}.{DateTime.Now.Month}." +
+                                     $"{DateTime.Now.Year}"));
         }
 
         return dates;
@@ -97,10 +123,10 @@ public class ReportService : IReportService
     {
         List<DateOnly> dates = new List<DateOnly>();
 
-        for (int i = 1; i <= DateTime.DaysInMonth(DateTime.UtcNow.Year, DateTime.UtcNow.Month-1); i++)
+        for (int i = 1; i <= DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month-1); i++)
         {
-            dates.Add(DateOnly.Parse($"{i}.{DateTime.UtcNow.Month}." +
-                                     $"{DateTime.UtcNow.Year}"));
+            dates.Add(DateOnly.Parse($"{i}.{DateTime.Now.Month}." +
+                                     $"{DateTime.Now.Year}"));
         }
 
         return dates;

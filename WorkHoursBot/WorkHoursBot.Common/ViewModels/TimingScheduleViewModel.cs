@@ -8,8 +8,8 @@ public class TimingScheduleViewModel
     public long ChatId { get; set; }
     
     [Required]
-    public DateOnly Date { get; set; }
+    public string Date { get; set; }
     
     [Required]
-    public TimeOnly Timing { get; set; }
+    public string Timing { get; set; }
 }

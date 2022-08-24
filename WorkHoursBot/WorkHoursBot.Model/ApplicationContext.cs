@@ -8,6 +8,7 @@ public class ApplicationContext : DbContext
 {
     public DbSet<Schedule> Schedules { get; set; }
     public DbSet<Job> Jobs { get; set; }
+    public DbSet<Timetable> Timetables { get; set; }
     public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
     {
     }

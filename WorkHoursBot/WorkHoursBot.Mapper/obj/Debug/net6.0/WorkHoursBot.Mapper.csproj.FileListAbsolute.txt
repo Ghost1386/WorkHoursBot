@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\bin\Debug\net6.0\WorkHoursBot.Mapper.deps.json
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\bin\Debug\net6.0\WorkHoursBot.Mapper.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\bin\Debug\net6.0\WorkHoursBot.Mapper.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\bin\Debug\net6.0\WorkHoursBot.Common.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\bin\Debug\net6.0\WorkHoursBot.Model.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\bin\Debug\net6.0\WorkHoursBot.Common.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\bin\Debug\net6.0\WorkHoursBot.Model.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.AssemblyInfo.cs
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.csproj.CopyComplete
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\refint\WorkHoursBot.Mapper.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\WorkHoursBot.Mapper.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Mapper\obj\Debug\net6.0\ref\WorkHoursBot.Mapper.dll

@@ -2,13 +2,15 @@
 
 public class Schedule
 {
+    public int Id { get; set; }
+    
     public long ChatId { get; set; }
     
-    public DateOnly Date { get; set; }
+    public string Date { get; set; }
     
-    public TimeOnly From { get; set; }
+    public string From { get; set; }
     
-    public TimeOnly To { get; set; }
+    public string To { get; set; }
     
-    public TimeSpan Timing { get; set; }
+    public string Timing { get; set; }
 }

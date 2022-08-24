@@ -11,7 +11,7 @@ using WorkHoursBot.Model;
 
 namespace WorkHoursBot
 {
-    static class Program
+    public static class Program
     {
         public static async Task Main(string[] args)
         {
@@ -20,9 +20,9 @@ namespace WorkHoursBot
                 mc.AddProfile(new MapperProfile());
             });
 
-            IMapper mapper = mappingConfig.CreateMapper();
+            var mapper = mappingConfig.CreateMapper();
 
-            string connection = "Server=localhost;Database=WorkHoursBot;Trusted_Connection=True;";
+            var connection = "Server=localhost;Database=WorkHoursBot;Trusted_Connection=True;";
             
             var host = Host.CreateDefaultBuilder()
                 .ConfigureServices((context, services) =>
@@ -35,13 +35,13 @@ namespace WorkHoursBot
                 })
                 .Build();
             
-            ActivatorUtilities.CreateInstance<IJobsService>(host.Services);
-            ActivatorUtilities.CreateInstance<IReportService>(host.Services);
-            ActivatorUtilities.CreateInstance<IScheduleService>(host.Services);
+            ActivatorUtilities.CreateInstance<JobsService>(host.Services);
+            ActivatorUtilities.CreateInstance<ReportService>(host.Services);
+            ActivatorUtilities.CreateInstance<ScheduleService>(host.Services);
 
-            var jobsService = ActivatorUtilities.CreateInstance<IJobsService>(host.Services);
-            var reportService = ActivatorUtilities.CreateInstance<IReportService>(host.Services);
-            var scheduleService = ActivatorUtilities.CreateInstance<IScheduleService>(host.Services);
+            var jobsService = ActivatorUtilities.CreateInstance<JobsService>(host.Services);
+            var reportService = ActivatorUtilities.CreateInstance<ReportService>(host.Services);
+            var scheduleService = ActivatorUtilities.CreateInstance<ScheduleService>(host.Services);
             
             var messageController = new MessageController(jobsService, reportService, scheduleService);
             

@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\bin\Debug\net6.0\WorkHoursBot.Model.deps.json
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\bin\Debug\net6.0\WorkHoursBot.Model.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\bin\Debug\net6.0\WorkHoursBot.Model.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\WorkHoursBot.Model.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\WorkHoursBot.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\WorkHoursBot.Model.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\WorkHoursBot.Model.AssemblyInfo.cs
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\WorkHoursBot.Model.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\WorkHoursBot.Model.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\refint\WorkHoursBot.Model.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\WorkHoursBot.Model.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Model\obj\Debug\net6.0\ref\WorkHoursBot.Model.dll

@@ -34,33 +34,63 @@ public class ScheduleService : IScheduleService
         }
     }
 
-    public string ChangeTiming(TimingScheduleViewModel model)
+    public string AddTiming(TimingScheduleViewModel model)
+    {
+        return ChangeTiming(model, true);
+    }
+
+    public string RemoveTiming(TimingScheduleViewModel model)
+    {
+        return ChangeTiming(model, false);
+    }
+
+    private string ChangeTiming(TimingScheduleViewModel model, bool type)
     {
         try
         {
-            var schedule = _mapper.Map<TimingScheduleViewModel, Schedule>(model);
-        
-            IQueryable<Schedule> query = _context.Schedules.AsQueryable();
-            
-            query = query.Where(x => x.ChatId == model.ChatId);
-            query = query.Where(x => x.Date == DateOnly.FromDateTime(DateTime.UtcNow));
+            var timetable = _mapper.Map<TimingScheduleViewModel, Timetable>(model);
 
-            if (query != null)
+            IQueryable<Timetable> query = _context.Timetables.AsQueryable();
+
+            string date = Convert.ToString(DateOnly.FromDateTime(DateTime.Now));
+
+            query = query.Where(x => x.ChatId == timetable.ChatId);
+            query = query.Where(x => x.Date == date);
+
+            List<Timetable> list = query.ToList();
+
+            if (list.Count == 1)
             {
                 var record = query.SingleOrDefault();
 
-                TimeOnly change = new TimeOnly();
-                change.Add(schedule.Timing);
+                TimeSpan change = TimeSpan.Parse(timetable.Timing);
 
-                record.Timing.Add(schedule.Timing);
-            
-                _context.Schedules.Update(record);
+                TimeOnly recordTime = TimeOnly.Parse(record.Timing);
+
+                TimeOnly newTime;
+
+                newTime = type == true ? recordTime.Add(change) : recordTime.Add(-change);
+
+                record.Timing = Convert.ToString(newTime);
+
+                _context.Timetables.Update(record);
                 _context.SaveChanges();
-                return "Added successfully";
+                
+                if (type == true)
+                {
+                    return "Added successfully";
+                }
+                
+                return "Removed successfully";
             }
             else
             {
-                _context.Schedules.Add(schedule);
+                if (type == false)
+                {
+                    return "You can't remove time, you have to add it first";
+                }
+                
+                _context.Timetables.Add(timetable);
                 _context.SaveChanges();
                 return "Added successfully";
             }

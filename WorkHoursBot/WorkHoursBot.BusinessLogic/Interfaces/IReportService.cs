@@ -4,9 +4,9 @@ namespace WorkHoursBot.BusinessLogic.Interfaces;
 
 public interface IReportService
 {
-    List<Schedule> Daily();
+    List<string> Daily();
     
-    List<string> MonthlyNow();
+    List<string> MonthCurrent();
 
     List<string> MonthPrevious();
 }

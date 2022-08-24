@@ -25,7 +25,7 @@ public class JobsService : IJobsService
 
             _context.Jobs.Add(job);
             _context.SaveChanges();
-            return "Job added successfully";
+            return "Job added successfully.";
         }
         catch (Exception e)
         {
