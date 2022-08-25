@@ -1,4 +1,5 @@
 ﻿using WorkHoursBot.BusinessLogic.Interfaces;
+using WorkHoursBot.Common.ViewModels;
 using WorkHoursBot.Model;
 using WorkHoursBot.Model.Models;
 
@@ -13,24 +14,62 @@ public class ReportService : IReportService
         _context = context;
     }
     
-    public List<string> Daily()
+    public List<string> Daily(ReportViewModel model)
     {
         try
         {
             IQueryable<Schedule> querySchedule = _context.Schedules.AsQueryable();
             IQueryable<Timetable> queryTimetables = _context.Timetables.AsQueryable();
             IQueryable<Job> queryJobs = _context.Jobs.AsQueryable();
+            
+            string date = Convert.ToString(DateOnly.FromDateTime(DateTime.Now));
+
+            querySchedule = querySchedule.Where(x => x.ChatId == model.ChatId);
+            querySchedule = querySchedule.Where(x => x.Date == date);
+            string schedule = string.Empty;
+            if (querySchedule.FirstOrDefault() != null)
+            {
+                List<Schedule> schedules = querySchedule.ToList();
+                foreach (var s in schedules)
+                {
+                    schedule += s.From + "-" + s.To + "\n";
+                }
+            }
+            
+            queryTimetables = queryTimetables.Where(x => x.ChatId == model.ChatId);
+            queryTimetables = queryTimetables.Where(x => x.Date == date);
+            string timetable = string.Empty;
+            if (queryTimetables.FirstOrDefault() != null)
+            {
+                List<Timetable> timetables = queryTimetables.ToList();
+                foreach (var t in timetables)
+                {
+                    timetable += t.Timing + "\n";
+                }
+            }
+            
+            
+            queryJobs = queryJobs.Where(x => x.ChatId == model.ChatId);
+            queryJobs = queryJobs.Where(x => x.Date == date);
+            string job = String.Empty;
+            if (queryJobs.FirstOrDefault() != null)
+            {
+                List<Job> jobs = queryJobs.ToList();
+                foreach (var j in jobs)
+                {
+                    job += j.Tasks + "\n";
+                }
+            }
 
             List<string> info = new List<string>
             {
-                DateTime.UtcNow.ToString(),
+                date,
                 "---",
-                querySchedule.Where(x => x.Date == Convert.ToString(DateOnly.FromDateTime(DateTime.Now))).ToString(),
+                schedule,
                 "---",
-                queryTimetables.Where(x => x.Date == Convert.ToString(DateOnly.FromDateTime(DateTime.Now))).ToString(),
+                timetable,
                 "---",
-                queryJobs.Where(x => x.Date == Convert.ToString(DateOnly.FromDateTime(DateTime.Now))).ToString(),
-                "==="
+                job,
             };
 
             return info;
@@ -42,30 +81,28 @@ public class ReportService : IReportService
         }
     }
 
-    public List<string> MonthCurrent()
+    public List<string> MonthCurrent(ReportViewModel model)
     {
         try
         {
-            IQueryable<Schedule> querySchedule = _context.Schedules.AsQueryable();
-            IQueryable<Timetable> queryTimetables = _context.Timetables.AsQueryable();
-            IQueryable<Job> queryJobs = _context.Jobs.AsQueryable();
-
             List<DateOnly> dates = LimitedDay();
-            List<string> info = new List<string>();
 
-            foreach (var date in dates)
-            {
-                info.Add(date.ToString());
-                info.Add("---");
-                info.Add(querySchedule.Where(x => x.Date == Convert.ToString(date)).ToString());
-                info.Add("---");
-                info.Add(queryTimetables.Where(x => x.Date == Convert.ToString(date)).ToString());
-                info.Add("---");
-                info.Add(queryJobs.Where(x =>x.Date == Convert.ToString(date)).ToString());
-                info.Add("===");
-            }
-        
-            return info;
+            return GetInfo(model.ChatId, dates);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            return new List<string>();
+        }
+    }
+    
+    public List<string> MonthPrevious(ReportViewModel model)
+    {
+        try
+        {
+            List<DateOnly> dates = UnLimitedDay();
+
+            return GetInfo(model.ChatId, dates);
         }
         catch (Exception e)
         {
@@ -74,36 +111,63 @@ public class ReportService : IReportService
         }
     }
 
-    public List<string> MonthPrevious()
+    private List<string> GetInfo(long id, List<DateOnly> dates)
     {
-        try
+        List<string> info = new List<string>();
+        
+        foreach (var date in dates)
         {
             IQueryable<Schedule> querySchedule = _context.Schedules.AsQueryable();
             IQueryable<Timetable> queryTimetables = _context.Timetables.AsQueryable();
             IQueryable<Job> queryJobs = _context.Jobs.AsQueryable();
 
-            List<DateOnly> dates = UnLimitedDay();
-            List<string> info = new List<string>();
-
-            foreach (var date in dates)
+            querySchedule = querySchedule.Where(x => x.ChatId == id);
+            querySchedule = querySchedule.Where(x => x.Date == Convert.ToString(date));
+            string schedule = string.Empty;
+            if (querySchedule.FirstOrDefault() != null)
             {
-                info.Add(date.ToString());
-                info.Add("---");
-                info.Add(querySchedule.Where(x => x.Date == Convert.ToString(date)).ToString());
-                info.Add("---");
-                info.Add(queryTimetables.Where(x => x.Date == Convert.ToString(date)).ToString());
-                info.Add("---");
-                info.Add(queryJobs.Where(x => x.Date == Convert.ToString(date)).ToString());
-                info.Add("===");
+                List<Schedule> schedules = querySchedule.ToList();
+                foreach (var s in schedules)
+                {
+                    schedule += s.From + "-" + s.To + "\n";
+                }
             }
-        
-            return info;
+
+            queryTimetables = queryTimetables.Where(x => x.ChatId == id);
+            queryTimetables = queryTimetables.Where(x => x.Date == Convert.ToString(date));
+            string timetable = string.Empty;
+            if (queryTimetables.FirstOrDefault() != null)
+            {
+                List<Timetable> timetables = queryTimetables.ToList();
+                foreach (var t in timetables)
+                {
+                    timetable += t.Timing + "\n";
+                }
+            }
+
+            queryJobs = queryJobs.Where(x => x.ChatId == id);
+            queryJobs = queryJobs.Where(x => x.Date == Convert.ToString(date));
+            string job = String.Empty;
+            if (queryJobs.FirstOrDefault() != null)
+            {
+                List<Job> jobs = queryJobs.ToList();
+                foreach (var j in jobs)
+                {
+                    job += j.Tasks + "\n";
+                }
+            }
+
+            info.Add(date.ToString());
+            info.Add("---");
+            info.Add(schedule);
+            info.Add("---");
+            info.Add(timetable);
+            info.Add("---");
+            info.Add(job);
+            info.Add("===");
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return new List<string>();
-        }
+
+        return info;
     }
 
     private List<DateOnly> LimitedDay()
@@ -112,7 +176,7 @@ public class ReportService : IReportService
 
         for (int i = 1; i <= DateTime.Now.Day; i++)
         {
-            dates.Add(DateOnly.Parse($"{i}.{DateTime.Now.Month}." +
+            dates.Add(DateOnly.Parse($"{DateTime.Now.Month}/{i}/" +
                                      $"{DateTime.Now.Year}"));
         }
 

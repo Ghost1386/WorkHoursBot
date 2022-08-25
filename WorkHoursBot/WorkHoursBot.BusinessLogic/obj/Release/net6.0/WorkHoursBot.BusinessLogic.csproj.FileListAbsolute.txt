@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\bin\Release\net6.0\WorkHoursBot.BusinessLogic.deps.json
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\bin\Release\net6.0\WorkHoursBot.BusinessLogic.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\bin\Release\net6.0\WorkHoursBot.BusinessLogic.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\bin\Release\net6.0\WorkHoursBot.Common.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\bin\Release\net6.0\WorkHoursBot.Model.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\bin\Release\net6.0\WorkHoursBot.Common.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\bin\Release\net6.0\WorkHoursBot.Model.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.AssemblyInfo.cs
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.csproj.CopyComplete
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\refint\WorkHoursBot.BusinessLogic.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\WorkHoursBot.BusinessLogic.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.BusinessLogic\obj\Release\net6.0\ref\WorkHoursBot.BusinessLogic.dll

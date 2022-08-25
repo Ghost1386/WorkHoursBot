@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\bin\Release\net6.0\WorkHoursBot.Common.deps.json
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\bin\Release\net6.0\WorkHoursBot.Common.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\bin\Release\net6.0\WorkHoursBot.Common.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\WorkHoursBot.Common.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\WorkHoursBot.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\WorkHoursBot.Common.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\WorkHoursBot.Common.AssemblyInfo.cs
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\WorkHoursBot.Common.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\WorkHoursBot.Common.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\refint\WorkHoursBot.Common.dll
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\WorkHoursBot.Common.pdb
+C:\Users\user\Desktop\WorkHoursBot\WorkHoursBot\WorkHoursBot.Common\obj\Release\net6.0\ref\WorkHoursBot.Common.dll

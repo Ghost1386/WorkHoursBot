@@ -1,12 +1,13 @@
-﻿using WorkHoursBot.Model.Models;
+﻿using WorkHoursBot.Common.ViewModels;
+using WorkHoursBot.Model.Models;
 
 namespace WorkHoursBot.BusinessLogic.Interfaces;
 
 public interface IReportService
 {
-    List<string> Daily();
+    List<string> Daily(ReportViewModel model);
     
-    List<string> MonthCurrent();
+    List<string> MonthCurrent(ReportViewModel model);
 
-    List<string> MonthPrevious();
+    List<string> MonthPrevious(ReportViewModel model);
 }
